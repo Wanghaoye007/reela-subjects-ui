@@ -1,0 +1,152 @@
+/* Three local-only layout studies of the same functioning editor. */
+html[data-editor-layout] .subject-image-dialog > [data-slot='dialog-header'] {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 54px 14px 20px;
+  gap: 12px;
+}
+.editor-layout-choices {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid #e4e6eb;
+  border-radius: 999px;
+  background: #f3f4f7;
+}
+.editor-layout-choices button {
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  color: #707784;
+  cursor: pointer;
+}
+.editor-layout-choices button[aria-pressed='true'] {
+  background: #fff;
+  color: #ce1551;
+  box-shadow: 0 1px 4px #18212f14;
+}
+.editor-layout-choices button:focus-visible { outline: 2px solid #e31c60; outline-offset: 1px; }
+html[data-editor-layout='compact'] .subject-editor-layout { grid-template-columns: minmax(0, 58fr) minmax(0, 42fr); }
+html[data-editor-layout='prompt'] .subject-editor-layout { grid-template-columns: minmax(0, 48fr) minmax(0, 52fr); }
+html[data-editor-layout='toolbar'] .subject-editor-layout { grid-template-columns: minmax(0, 44fr) minmax(0, 56fr); }
+html[data-editor-layout] .subject-editor-layout { padding: 12px; gap: 12px; }
+html[data-editor-layout] .subject-editor-body { padding: 14px; overflow: hidden; }
+html[data-editor-layout] .subject-editor-body [data-slot='tabs-content'][data-state='active'] { padding-top: 12px; }
+html[data-editor-layout] .subject-generation-form {
+  display: grid;
+  grid-template-columns: minmax(0, 148px) minmax(0, 1fr);
+  grid-template-rows: 48px minmax(136px, 1fr) auto 34px;
+  grid-template-areas: 'reference reference' 'prompt prompt' 'draft draft' 'model actions';
+  gap: 10px;
+}
+html[data-editor-layout] .subject-generation-form:has(.subject-creation-fields) {
+  grid-template-rows: auto 48px minmax(136px, 1fr) auto 34px;
+  grid-template-areas: 'identity identity' 'reference reference' 'prompt prompt' 'draft draft' 'model actions';
+}
+html[data-editor-layout] .subject-creation-fields { grid-area: identity; }
+html[data-editor-layout] .subject-reference-picker {
+  grid-area: reference;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  height: 48px;
+}
+html[data-editor-layout] .subject-reference-heading { margin: 0; flex-shrink: 0; font-size: 11px; }
+html[data-editor-layout] .subject-reference-selection { min-width: 0; gap: 8px; }
+html[data-editor-layout] .subject-reference-thumb { width: 56px; height: 44px; border-radius: 9px; }
+html[data-editor-layout] .subject-reference-thumb > button { width: 18px; height: 18px; top: 3px; right: 3px; }
+html[data-editor-layout] .subject-reference-selection > .subject-reference-add {
+  flex-direction: row;
+  gap: 5px;
+  width: auto;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border-style: solid;
+  background: #f5f6f8;
+}
+html[data-editor-layout] .subject-reference-add svg { width: 14px; height: 14px; }
+html[data-editor-layout] .subject-editor-prompt { grid-area: prompt; min-height: 0; gap: 6px; }
+html[data-editor-layout] .subject-editor-prompt textarea { min-height: 0; height: 100%; line-height: 1.6; }
+html[data-editor-layout] .subject-prompt-draft-note {
+  grid-area: draft;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 9px;
+}
+html[data-editor-layout] .subject-editor-settings { grid-area: model; min-width: 0; gap: 0; }
+html[data-editor-layout] .subject-editor-settings > div {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+html[data-editor-layout] .subject-editor-settings [data-slot='select-trigger'] {
+  width: 100%;
+  height: 32px;
+  font-size: 11px;
+  padding-inline: 10px;
+  border-color: #e2e5eb;
+}
+html[data-editor-layout] .subject-generation-form > [data-slot='dialog-footer'] {
+  grid-area: actions;
+  position: static;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+html[data-editor-layout] .subject-generation-form > [data-slot='dialog-footer'] > button { height: 32px; font-size: 12px; padding-inline: 14px; }
+html[data-editor-layout] .subject-generation-form > [data-slot='dialog-footer'] > button:first-child { width: 32px; padding: 0; }
+html[data-editor-layout] .subject-editor-upload-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+/* B: the prompt leads; image references work as an attachment strip underneath. */
+html[data-editor-layout='prompt'] .subject-generation-form {
+  grid-template-rows: minmax(136px, 1fr) 48px auto 34px;
+  grid-template-areas: 'prompt prompt' 'reference reference' 'draft draft' 'model actions';
+}
+html[data-editor-layout='prompt'] .subject-generation-form:has(.subject-creation-fields) {
+  grid-template-rows: auto minmax(136px, 1fr) 48px auto 34px;
+  grid-template-areas: 'identity identity' 'prompt prompt' 'reference reference' 'draft draft' 'model actions';
+}
+/* C: controls share the top row, letting the instruction field occupy the full width. */
+html[data-editor-layout='toolbar'] .subject-generation-form {
+  grid-template-columns: minmax(0, 1fr) 148px;
+  grid-template-rows: 48px minmax(136px, 1fr) auto 34px;
+  grid-template-areas: 'reference model' 'prompt prompt' 'draft draft' 'actions actions';
+}
+html[data-editor-layout='toolbar'] .subject-generation-form:has(.subject-creation-fields) {
+  grid-template-rows: auto 48px minmax(136px, 1fr) auto 34px;
+  grid-template-areas: 'identity identity' 'reference model' 'prompt prompt' 'draft draft' 'actions actions';
+}
+html[data-editor-layout='toolbar'] .subject-generation-form > [data-slot='dialog-footer'] > button:first-child { width: auto; padding-inline: 12px; }
+html[data-editor-layout='toolbar'] .subject-editor-upload-label { position: static; width: auto; height: auto; clip-path: none; }
+@media (max-width: 750px) {
+  html[data-editor-layout] .subject-image-dialog > [data-slot='dialog-header'] { flex-wrap: wrap; padding: 12px 44px 12px 16px; }
+  .editor-layout-choices { max-width: 100%; }
+  .editor-layout-choices button { font-size: 10px; padding-inline: 8px; }
+  html[data-editor-layout] .subject-editor-layout { grid-template-columns: minmax(0, 1fr); }
+  html[data-editor-layout] .subject-editor-body { overflow: visible; }
+  html[data-editor-layout] .subject-generation-form { grid-template-rows: 48px 246px auto 34px; }
+  html[data-editor-layout] .subject-generation-form:has(.subject-creation-fields) { grid-template-rows: auto 48px 246px auto 34px; }
+  html[data-editor-layout='prompt'] .subject-generation-form { grid-template-rows: 246px 48px auto 34px; }
+  html[data-editor-layout='prompt'] .subject-generation-form:has(.subject-creation-fields) { grid-template-rows: auto 246px 48px auto 34px; }
+  html[data-editor-layout] .subject-editor-prompt textarea { height: 220px; min-height: 0; }
+}

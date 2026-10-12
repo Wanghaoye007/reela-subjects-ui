@@ -1,0 +1,1 @@
+{"extends":"../tsconfig.json","include":["./**/*.ts","./**/*.tsx","../app/**/*.ts","../app/**/*.tsx","../.react-router/types/**/*"],"compilerOptions":{"paths":{"~/*":["../app/*"]}}}

@@ -1,0 +1,94 @@
+/* Three voice workflows inside the accepted B image editor. */
+.voice-study-choices { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+.voice-study-choices button { height: 30px; padding: 0 10px; border-radius: 8px; color: #858b96; font-size: 11px; cursor: pointer; white-space: nowrap; }
+.voice-study-choices button[aria-pressed='true'] { color: #272a31; background: #f0f2f5; font-weight: 600; }
+.voice-study-choices button:focus-visible { outline: 2px solid #e31c60; outline-offset: 2px; }
+
+html[data-voice-layout] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) {
+  width: min(1180px, calc(100vw - 48px)) !important; height: min(620px, 90dvh);
+}
+html[data-voice-layout] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) .subject-editor-layout { grid-template-columns: minmax(240px, 28fr) minmax(0, 72fr); }
+html[data-voice-layout] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) .subject-editor-preview { padding: 16px; align-self: start; gap: 16px; }
+html[data-voice-layout] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) .subject-editor-preview-card { flex: none; height: auto; }
+html[data-voice-layout] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) .subject-editor-image-stage { flex: none; height: auto; aspect-ratio: 4 / 3; }
+html[data-voice-layout] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) .subject-editor-appearances { margin-top: 0; }
+html[data-voice-layout] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) .subject-appearance-scroll > button { width: 64px; flex-basis: 64px; }
+html[data-voice-layout] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) .subject-editor-body { padding: 20px; }
+html[data-voice-layout] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) .subject-editor-body > [data-slot='tabs'] { gap: 12px; }
+html[data-voice-layout] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) .subject-editor-body > [data-slot='tabs'] > [data-slot='tabs-list'] [data-slot='tabs-trigger'] { height: 34px; font-size: 13px; }
+html[data-voice-layout] .subject-modal-voice .review-voice-editor { gap: 12px; }
+html[data-voice-layout] .subject-modal-voice .voice-current-row { gap: 10px; padding: 0 0 12px; border-bottom: 1px solid #eceef2; }
+html[data-voice-layout] .subject-modal-voice .voice-current-icon { display: none; }
+html[data-voice-layout] .subject-modal-voice .voice-current-identity { flex: 0 1 auto; gap: 8px; }
+html[data-voice-layout] .subject-modal-voice .voice-current-label { font-size: 12px; color: #79818e; }
+html[data-voice-layout] .subject-modal-voice .voice-current-name { font-size: 14px; }
+html[data-voice-layout] .subject-modal-voice .voice-current-actions { flex: 1; }
+html[data-voice-layout] .subject-modal-voice .voice-current-actions > .voice-current-preview { width: auto; gap: 5px; height: 32px; padding: 0 10px; border-color: #e2e5eb; border-radius: 999px; color: #333842; font-size: 12px; }
+html[data-voice-layout] .subject-modal-voice .voice-current-actions > .voice-unbind { margin-left: auto; border: 0; opacity: .65; }
+html[data-voice-layout] .subject-modal-voice .voice-current-actions > .voice-unbind:hover { opacity: 1; }
+html[data-voice-layout] .subject-modal-voice .voice-source-tabs { gap: 16px; }
+html[data-voice-layout] .subject-modal-voice .voice-source-choices { border-bottom: 0; gap: 6px; }
+html[data-voice-layout] .subject-modal-voice .voice-source-choices [data-slot='tabs-trigger'] { height: 32px !important; font-size: 13px; }
+html[data-voice-layout] .subject-modal-voice .voice-design-fields { gap: 16px; padding: 2px; }
+html[data-voice-layout] .subject-modal-voice .voice-design-workspace { flex: none; min-height: 0; align-items: start; }
+html[data-voice-layout] .subject-modal-voice .voice-design-workspace > label > div,
+html[data-voice-layout] .subject-modal-voice .voice-name-field > div { font-size: 13px; color: #3e4551; }
+html[data-voice-layout] .subject-modal-voice .voice-name-field input { height: 38px; font-size: 13px; }
+html[data-voice-layout] .subject-modal-voice .voice-design-workspace textarea { flex: none; height: 150px; min-height: 0; font-size: 14px; line-height: 1.75; background: #fafbfc; padding: 14px; }
+html[data-voice-layout] .subject-modal-voice .voice-editor-footer { gap: 10px; padding-top: 14px; }
+html[data-voice-layout] .subject-modal-voice .voice-editor-footer > button { height: 40px; font-size: 13px; padding-inline: 18px; }
+html[data-voice-layout] .subject-modal-voice .voice-scope-option { font-size: 12px; padding: 7px 10px; }
+html[data-voice-layout] .subject-modal-voice .voice-scheme { border-radius: 10px; }
+html[data-voice-layout] .subject-modal-voice .voice-scheme-select { font-size: 12px; }
+
+/* 01: short, balanced, sequential form for quick changes. */
+html[data-voice-layout='compact'] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) { width: min(1100px, calc(100vw - 48px)) !important; height: min(590px, 90dvh); }
+html[data-voice-layout='compact'] .subject-modal-voice .voice-design-workspace { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+html[data-voice-layout='compact'] .subject-modal-voice .voice-description-field textarea { height: 130px; }
+html[data-voice-layout='compact'] .subject-modal-voice .voice-preview-text textarea { height: 112px; }
+
+/* 02: the voice description is the main canvas; naming and dialogue are secondary. */
+html[data-voice-layout='focus'] .subject-modal-voice .voice-design-fields { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); grid-template-rows: 64px auto auto; grid-template-areas: 'description name' 'description preview' 'schemes schemes'; align-content: start; gap: 16px 20px; }
+html[data-voice-layout='focus'] .subject-modal-voice .voice-design-workspace { display: contents; }
+html[data-voice-layout='focus'] .subject-modal-voice .voice-name-field { grid-area: name; display: flex; flex-direction: column; align-items: stretch; gap: 8px; }
+html[data-voice-layout='focus'] .subject-modal-voice .voice-description-field { grid-area: description; }
+html[data-voice-layout='focus'] .subject-modal-voice .voice-description-field textarea { height: 200px; }
+html[data-voice-layout='focus'] .subject-modal-voice .voice-preview-text { grid-area: preview; }
+html[data-voice-layout='focus'] .subject-modal-voice .voice-preview-text textarea { height: 120px; }
+html[data-voice-layout='focus'] .subject-modal-voice .voice-schemes { grid-area: schemes; }
+
+/* 03: sources become a slim side navigation; dialogue is the first editing surface. */
+html[data-voice-layout='studio'] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) { width: min(1240px, calc(100vw - 48px)) !important; height: min(600px, 90dvh); }
+html[data-voice-layout='studio'] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) .subject-editor-layout { grid-template-columns: 250px minmax(0, 1fr); }
+html[data-voice-layout='studio'] .subject-modal-voice .voice-source-tabs { display: grid; grid-template-columns: 100px minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); gap: 20px; }
+html[data-voice-layout='studio'] .subject-modal-voice .voice-source-choices { flex-direction: column; align-items: stretch; align-self: start; width: 100%; gap: 4px; }
+html[data-voice-layout='studio'] .subject-modal-voice .voice-source-choices [data-slot='tabs-trigger'] { padding: 0 12px; justify-content: flex-start; }
+html[data-voice-layout='studio'] .subject-modal-voice .voice-design-workspace { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); }
+html[data-voice-layout='studio'] .subject-modal-voice .voice-preview-text { order: -1; }
+html[data-voice-layout='studio'] .subject-modal-voice .voice-preview-text textarea { height: 180px; }
+html[data-voice-layout='studio'] .subject-modal-voice .voice-description-field textarea { height: 134px; }
+
+@media (max-width: 1000px) {
+  html[data-voice-layout] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) .subject-editor-layout { grid-template-columns: 200px minmax(0, 1fr); }
+  html[data-voice-layout] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) .subject-editor-body { padding: 16px; }
+  html[data-voice-layout='studio'] .subject-modal-voice .voice-source-tabs { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); gap: 14px; }
+  html[data-voice-layout='studio'] .subject-modal-voice .voice-source-choices { flex-direction: row; }
+  html[data-voice-layout='focus'] .subject-modal-voice .voice-design-fields { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 14px; }
+  html[data-voice-layout='studio'] .subject-modal-voice .voice-preview-text textarea { height: 150px; }
+}
+@media (max-width: 750px) {
+  html[data-voice-layout] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) { width: calc(100vw - 24px) !important; height: 92dvh; }
+  .voice-study-choices { max-width: 100%; flex-wrap: wrap; gap: 0; }
+  .voice-study-choices button { padding-inline: 8px; font-size: 10px; }
+  html[data-voice-layout] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) .subject-editor-layout { grid-template-columns: minmax(0, 1fr); grid-auto-rows: max-content; }
+  html[data-voice-layout] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) .subject-editor-preview { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 14px; align-items: center; }
+  html[data-voice-layout] .subject-image-dialog:has(.subject-modal-voice[data-state='active']) .subject-editor-appearances { margin: 0; padding: 0; border: 0; }
+  html[data-voice-layout] .subject-modal-voice .voice-design-fields { display: flex; flex-direction: column; gap: 16px; }
+  html[data-voice-layout] .subject-modal-voice .voice-design-workspace { display: flex; flex-direction: column; gap: 16px; }
+  html[data-voice-layout] .subject-modal-voice .voice-design-workspace > label { width: 100%; }
+  html[data-voice-layout] .subject-modal-voice .voice-design-workspace textarea { height: 120px; }
+  html[data-voice-layout='focus'] .subject-modal-voice .voice-name-field { display: grid; grid-template-columns: 72px minmax(0, 1fr); align-items: center; }
+  html[data-voice-layout='studio'] .subject-modal-voice .voice-preview-text textarea { height: 140px; }
+  html[data-voice-layout] .subject-modal-voice .voice-footer-leading { flex-basis: 100%; }
+  html[data-voice-layout] .subject-modal-voice .voice-current-label { font-size: 11px; }
+}

@@ -1,0 +1,18 @@
+@import '@repo/ui/global.css';
+@source '../app';
+@source '../../../../packages/ui/src';
+:root {
+  --header-height: 56px;
+  --side-width: 260px;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  color-scheme: light;
+}
+.source-preview-label {
+  position: fixed;
+  right: 18px;
+  top: 17px;
+  z-index: 35;
+  font-size: 11px;
+  color: #888;
+  pointer-events: none;
+}

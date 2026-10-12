@@ -1,0 +1,4 @@
+import { readdir, readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+async function walk(path) { for (const item of await readdir(path, { withFileTypes: true })) { if (['.git','node_modules'].includes(item.name)) continue; const file=join(path,item.name); if (item.isDirectory()) await walk(file); else { if (item.name.startsWith('.env')) throw new Error('Environment file: '+file); if (/\.(?:jpg|png|wav)$/.test(file)) continue; const text=await readFile(file,'utf8'); const pattern=new RegExp(['AK'+'IA[0-9A-Z]{16}','AS'+'IA[0-9A-Z]{16}','gh'+'[pousr]_[A-Za-z0-9]{30,}','-----BEGIN '+'(?:RSA |EC |OPENSSH )?PRIVATE KEY-----','files'+'\\.reela\\.com','p_'+'[0-9]{15,}'].join('|')); if (pattern.test(text)) throw new Error('Public content check failed: '+file); } } }
+await walk('.'); console.log('Public content check passed');

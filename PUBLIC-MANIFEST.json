@@ -1,0 +1,467 @@
+{
+  "layout": {
+    "image": "results",
+    "voice": "focus",
+    "maxColumns": 5
+  },
+  "data": "synthetic only",
+  "sourceFiles": [
+    "apps/web-worker/src/workers/subject-regen/processors/regen-subject-image.spec.ts",
+    "apps/web-worker/src/workers/subject-regen/processors/regen-subject-image.ts",
+    "apps/web/app/components/project/project-forms.spec.tsx",
+    "apps/web/app/components/project/subject-browser.spec.ts",
+    "apps/web/app/components/project/subject-browser.ts",
+    "apps/web/app/components/project/subject-card-interactions.css",
+    "apps/web/app/components/project/subject-editor-image.tsx",
+    "apps/web/app/components/project/subject-image-dialog.tsx",
+    "apps/web/app/components/project/subject-layout-study.ts",
+    "apps/web/app/components/project/subject-list.tsx",
+    "apps/web/app/components/project/subject-picker-dialog.tsx",
+    "apps/web/app/components/project/subject-preview-stack.tsx",
+    "apps/web/app/components/project/subject-reference-picker.tsx",
+    "apps/web/app/components/project/subject-review.css",
+    "apps/web/app/components/project/subject-review.tsx",
+    "apps/web/app/components/project/subject-study-history.tsx",
+    "apps/web/app/components/project/subject-upload-panel.tsx",
+    "apps/web/app/components/project/subject-voice-dialog.tsx",
+    "apps/web/app/components/project/voice-clone-panel.tsx",
+    "apps/web/app/components/project/voice-design-panel.tsx",
+    "apps/web/app/components/project/voice-library-cards.tsx",
+    "apps/web/app/components/project/voice-picker-panel.tsx",
+    "apps/web/app/constants/voice.ts",
+    "apps/web/app/lib/api/api-request.ts",
+    "apps/web/app/lib/api/api-response.server.spec.ts",
+    "apps/web/app/lib/api/api-response.server.ts",
+    "apps/web/app/locales/de/components/ReflixSubjectList.ts",
+    "apps/web/app/locales/en/components/ReflixSubjectList.ts",
+    "apps/web/app/locales/fr/components/ReflixSubjectList.ts",
+    "apps/web/app/locales/ja/components/ReflixSubjectList.ts",
+    "apps/web/app/locales/ko/components/ReflixSubjectList.ts",
+    "apps/web/app/locales/zh/components/ReflixSubjectList.ts",
+    "apps/web/app/modules/project/add-subject.server.ts",
+    "apps/web/app/modules/project/add-subject.spec.ts",
+    "apps/web/app/modules/project/project-contract.ts",
+    "apps/web/app/modules/project/project-requests.ts",
+    "apps/web/app/modules/project/regen-subject.server.ts",
+    "apps/web/app/modules/project/regen-subject.spec.ts",
+    "apps/web/app/routes/api.projects.subjects.add.ts",
+    "apps/web/app/routes/api.projects.subjects.regenerate.ts",
+    "packages/bullmq/src/config/subject-regen-config.ts",
+    "packages/reel-worker-api/src/services/reflix-service.spec.ts",
+    "packages/reel-worker-api/src/services/reflix-service.ts"
+  ],
+  "sourceBaseline": "84422a9ea7db2f6af8f274ae287dab1f66512307",
+  "publicTestFixtures": "Production host examples replaced with generic example hosts; no assertions removed.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 42,
+      "sha256": "fbf16f13403c0b6c4013fcb45ff8db7346f8791371a0ce1ca14f676ddef0d387"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1977,
+      "sha256": "00148043960bb0947c835001dcce72644173a31b34c44e3075ed4f53c166d6aa"
+    },
+    {
+      "path": "data/demo-fixture.json",
+      "bytes": 279123,
+      "sha256": "e1a20b25c60cb85ac65f744b3df1be3985a8a52fbff87e2a8f922e0436fbf0a9"
+    },
+    {
+      "path": "docs/INTEGRATION.md",
+      "bytes": 2260,
+      "sha256": "ee22e783aeb8f1af211234aeff7dd6251d7f774ad95549d29419c7e719772ed6"
+    },
+    {
+      "path": "docs/screenshots/image.jpg",
+      "bytes": 89393,
+      "sha256": "852fe6a98e02cf3425264ddc45207a55fd689961e1ea6113ce7572a1f7663817"
+    },
+    {
+      "path": "docs/screenshots/subjects.jpg",
+      "bytes": 131758,
+      "sha256": "e69b393cdada3e82b6d1fb1bcf30cd886a9ef8ba13a17057ce772d22db5a68dd"
+    },
+    {
+      "path": "docs/screenshots/voice.jpg",
+      "bytes": 96408,
+      "sha256": "6ab13e1774f0b1442c69d80004e5a1a0f45074b63b70f222c963fb364121a8c6"
+    },
+    {
+      "path": "package.json",
+      "bytes": 230,
+      "sha256": "67eecd54ff6c6527ad071993acea143316464dc1cd519949555141012a91bf92"
+    },
+    {
+      "path": "preview/assets/index-911sxOeA.js",
+      "bytes": 1250214,
+      "sha256": "97b6d917d7d4c436ca25b6ba710304a7d83720f5241184c7e2c8760cd0c97315"
+    },
+    {
+      "path": "preview/assets/index-DXKKxbGT.css",
+      "bytes": 267447,
+      "sha256": "578ec05fa4d8ac8e38422f5cef6393a344c1fdb83e7ef95ef0aeb1be085a52d1"
+    },
+    {
+      "path": "preview/demo-assets/preview-tone.wav",
+      "bytes": 12844,
+      "sha256": "95179722e164414e1a601465ac43209c8dc2821681f02325e15b2b572042076d"
+    },
+    {
+      "path": "preview/demo-assets/subject-01.svg",
+      "bytes": 551,
+      "sha256": "1b0bcaddb7c36c98c99a9dcd11857425d8515bba9aa4dc75a8418547c2e34131"
+    },
+    {
+      "path": "preview/demo-assets/subject-02.svg",
+      "bytes": 551,
+      "sha256": "7d0609e85a2bd512b1ee2d1b0cad411f9fba7f5e853ad6fa9fe166c537987f36"
+    },
+    {
+      "path": "preview/demo-assets/subject-03.svg",
+      "bytes": 551,
+      "sha256": "a11ebe365232ae69ff52741c01dace113f74ad410d05e19883c54acb07a5ffde"
+    },
+    {
+      "path": "preview/demo-assets/subject-04.svg",
+      "bytes": 551,
+      "sha256": "6488bfafbdb1a79aa5798bbadb7051a5a73ec8c7801001de97ace5c935a38bca"
+    },
+    {
+      "path": "preview/demo-assets/subject-05.svg",
+      "bytes": 551,
+      "sha256": "9b5c48ca948c8adb59319efc6f1a35f5d40bd3acfdb0996b47f1392e35755acb"
+    },
+    {
+      "path": "preview/demo-assets/subject-06.svg",
+      "bytes": 551,
+      "sha256": "6e0a6bd073fad08112309c12606c4aec46faa27afa06d55284ad37a0caf09357"
+    },
+    {
+      "path": "preview/demo-assets/subject-07.svg",
+      "bytes": 551,
+      "sha256": "dc3a1820c9c7a2cd1d33f939590d95341f6dd07baadbe8e7de921361334ddf14"
+    },
+    {
+      "path": "preview/demo-assets/subject-08.svg",
+      "bytes": 551,
+      "sha256": "8f0621312f9bc865e04c1ea92fc23d402efb7add4b7d60ee0294e21007e20345"
+    },
+    {
+      "path": "preview/demo-assets/subject-09.svg",
+      "bytes": 551,
+      "sha256": "429c0e1b6e7b882dde9ffcdcad044ad43bbee3b898c488db27537f8041d1a5dd"
+    },
+    {
+      "path": "preview/demo-assets/subject-10.svg",
+      "bytes": 551,
+      "sha256": "15c2a3d6b2bff532b477c5f5733b89b9a502b7217aeaa01241c7087b935e7d98"
+    },
+    {
+      "path": "preview/demo-assets/subject-11.svg",
+      "bytes": 551,
+      "sha256": "92a884771b5a740e0619ca18963e624f77039493a7c5b487291a2ad423add017"
+    },
+    {
+      "path": "preview/demo-assets/subject-12.svg",
+      "bytes": 551,
+      "sha256": "f6c25054e71df9e0a195dd11a9db636d624293631dcf58f76d9a0aedfc6d9592"
+    },
+    {
+      "path": "preview/index.html",
+      "bytes": 370,
+      "sha256": "92d22d07d8619ee290b42b480dbcdf343faefa876e472be7e7b21adcbf134410"
+    },
+    {
+      "path": "scripts/check-public.mjs",
+      "bytes": 848,
+      "sha256": "18b97dc64bac24caeb619ce723547c3232afe0ac76c61820ed03685d169307d4"
+    },
+    {
+      "path": "server.mjs",
+      "bytes": 1652,
+      "sha256": "c97d4e563f4edbb45826661350d32dc03d4e5a5fa95fbaa9c14a2ed9f6753977"
+    },
+    {
+      "path": "source/apps/web/app/components/project/project-forms.spec.tsx",
+      "bytes": 89063,
+      "sha256": "937676c3a81bd3cd5132854c5f54952bd0b9c772bd496567c4ec730ad5c22084"
+    },
+    {
+      "path": "source/apps/web/app/components/project/subject-browser.spec.ts",
+      "bytes": 1786,
+      "sha256": "215d4b83e72b0bff27250330fa8ede3c91b6b816ea524d76b7c39ec03beaa340"
+    },
+    {
+      "path": "source/apps/web/app/components/project/subject-browser.ts",
+      "bytes": 985,
+      "sha256": "d1e0dfe66a3b56e6e5caff1ed28965d5fd1cf07b4046848c4c8c4b41f0356b64"
+    },
+    {
+      "path": "source/apps/web/app/components/project/subject-card-interactions.css",
+      "bytes": 29575,
+      "sha256": "6f767e196bdbf6c84a02dc19d598547fd6a68d82ac630eac2848ac9247dbe934"
+    },
+    {
+      "path": "source/apps/web/app/components/project/subject-editor-image.tsx",
+      "bytes": 1783,
+      "sha256": "323adfa180727b4c8701eefee8785f5ae10fcab69b5e9fa4001505127ac894ce"
+    },
+    {
+      "path": "source/apps/web/app/components/project/subject-image-dialog.tsx",
+      "bytes": 25181,
+      "sha256": "ba72b564c489a76d9e9da900473ea7bd0dfc2b78c44409ccd28b2c65f1039a4d"
+    },
+    {
+      "path": "source/apps/web/app/components/project/subject-layout-study.ts",
+      "bytes": 266,
+      "sha256": "a62c36ea513a2ef9574cea6347d293383dcdcd417a410758a61f6e83b7bd909b"
+    },
+    {
+      "path": "source/apps/web/app/components/project/subject-list.tsx",
+      "bytes": 20927,
+      "sha256": "a1c20256cf0e87af283cf8d6ecfc26b7ee35cfe85d8e481a510cd8313bdb0cc0"
+    },
+    {
+      "path": "source/apps/web/app/components/project/subject-picker-dialog.tsx",
+      "bytes": 10571,
+      "sha256": "8c42757bb36a63b23d77b35527ffd94b457a0be7cec1280c9a0ebbdd28d144fd"
+    },
+    {
+      "path": "source/apps/web/app/components/project/subject-preview-stack.tsx",
+      "bytes": 1961,
+      "sha256": "d44c7bf72f4167031db69ad366b393bf2fa5875221b4105f9e2ce109ab029d25"
+    },
+    {
+      "path": "source/apps/web/app/components/project/subject-reference-picker.tsx",
+      "bytes": 5708,
+      "sha256": "413e13b9b7c0fb6118a060547c5a4663987c8e6b0cc7ce4484a7aee1c78f6969"
+    },
+    {
+      "path": "source/apps/web/app/components/project/subject-review.css",
+      "bytes": 14737,
+      "sha256": "b35c63df50d4bbbc8a45d88d41b82b483281d596ced5d7565b08e25f10540cbe"
+    },
+    {
+      "path": "source/apps/web/app/components/project/subject-review.tsx",
+      "bytes": 26456,
+      "sha256": "67e0e93cb1544f0451d827b2d73ca92c0119c69e96f943b81abeae74de0d9b34"
+    },
+    {
+      "path": "source/apps/web/app/components/project/subject-study-history.tsx",
+      "bytes": 2998,
+      "sha256": "f6a799f0b088c2b95e41cb7cc31375ef8f510f709a1fa1a6f9005b73a4bd57ea"
+    },
+    {
+      "path": "source/apps/web/app/components/project/subject-upload-panel.tsx",
+      "bytes": 1739,
+      "sha256": "01641d52a0b3723e897d775f7dcd2eab853e1a6c019d75067cb8966ae0eddaf2"
+    },
+    {
+      "path": "source/apps/web/app/components/project/subject-voice-dialog.tsx",
+      "bytes": 12522,
+      "sha256": "5485ef196a90460b491793448773d8e37e4ae8606cd671529bdd174e05a8dd2b"
+    },
+    {
+      "path": "source/apps/web/app/components/project/voice-clone-panel.tsx",
+      "bytes": 7381,
+      "sha256": "211903f28f1b3e6d881823771ff6e92fceb66faaee0dcd0f5ba1ce19730f8c87"
+    },
+    {
+      "path": "source/apps/web/app/components/project/voice-design-panel.tsx",
+      "bytes": 7101,
+      "sha256": "5d5aa21db79360ae9458d749584059c3edf3a2ce0790f05e15629a2d138d8a58"
+    },
+    {
+      "path": "source/apps/web/app/components/project/voice-library-cards.tsx",
+      "bytes": 2319,
+      "sha256": "7d7ae6e9609faa1bcf87ee6cfb82e361d0979edd2bb3805c25298f931c23c226"
+    },
+    {
+      "path": "source/apps/web/app/components/project/voice-picker-panel.tsx",
+      "bytes": 9103,
+      "sha256": "7a650d4e14d9cb394f714afbeef755c39ec2cb6ae2c4d5e70d7335bc23fdc8d9"
+    },
+    {
+      "path": "source/apps/web/app/constants/voice.ts",
+      "bytes": 730,
+      "sha256": "287726394d534b749adc22c757dd372b81ba0eed33bca0971ca14da0afc8bb30"
+    },
+    {
+      "path": "source/apps/web/app/lib/api/api-request.ts",
+      "bytes": 2446,
+      "sha256": "6efd2b28b07f1be2185c4a47309bc6246cae458f6dc0fe604224d4fd5c2e1008"
+    },
+    {
+      "path": "source/apps/web/app/lib/api/api-response.server.spec.ts",
+      "bytes": 2387,
+      "sha256": "98813895ce01274307e9754e6ea35fee5056fc8aec2ce0808338d3fb2bb3ea66"
+    },
+    {
+      "path": "source/apps/web/app/lib/api/api-response.server.ts",
+      "bytes": 2941,
+      "sha256": "123164bb7cba30008592a937aafdc0e6a63f4f3d2916154249f037191980ff5d"
+    },
+    {
+      "path": "source/apps/web/app/locales/de/components/ReflixSubjectList.ts",
+      "bytes": 9901,
+      "sha256": "e5a1a7c501ebe090f46bd0ea0efc978c4de294f3eefaa2e07d6466b83e340c89"
+    },
+    {
+      "path": "source/apps/web/app/locales/en/components/ReflixSubjectList.ts",
+      "bytes": 9112,
+      "sha256": "c8f8bdf799501b65b27a34c2a8b7a8a1a0f9dbbc772a0ecf13eeac3d9a52f6ef"
+    },
+    {
+      "path": "source/apps/web/app/locales/fr/components/ReflixSubjectList.ts",
+      "bytes": 10358,
+      "sha256": "2717fc7a47c5b513c7226c332a62786227f6283d9094e70322f9aae068b26d28"
+    },
+    {
+      "path": "source/apps/web/app/locales/ja/components/ReflixSubjectList.ts",
+      "bytes": 11296,
+      "sha256": "0a23795b040fc1f22ec9d779fc56b978ce868a52382922df93ae03ab0bd197ca"
+    },
+    {
+      "path": "source/apps/web/app/locales/ko/components/ReflixSubjectList.ts",
+      "bytes": 10496,
+      "sha256": "8ed865e58a0682f17e0d7f58891d226d55528d370d692291f6324d9b8990b254"
+    },
+    {
+      "path": "source/apps/web/app/locales/zh/components/ReflixSubjectList.ts",
+      "bytes": 8927,
+      "sha256": "a6c821b1b3d4ba663384e5270ad46363b408fe072e218c7ad1a64e3b31f9a5df"
+    },
+    {
+      "path": "source/apps/web/app/modules/project/add-subject.server.ts",
+      "bytes": 4050,
+      "sha256": "76794751370a661a45a7e78959b80ab149a6da5067afe0cd602b429b58d9c339"
+    },
+    {
+      "path": "source/apps/web/app/modules/project/add-subject.spec.ts",
+      "bytes": 5715,
+      "sha256": "3e25387e4590cd84de0208fc89f32c3d5b6ea43cd270eee7b07feb30eca9ac2d"
+    },
+    {
+      "path": "source/apps/web/app/modules/project/project-contract.ts",
+      "bytes": 8649,
+      "sha256": "c6f0ab4f8b6bfc037d7c6f2fac69e35bdaa846de519851d283c88fd72f00de30"
+    },
+    {
+      "path": "source/apps/web/app/modules/project/project-requests.ts",
+      "bytes": 6681,
+      "sha256": "d041eefa9009ba7161bfb1519ccebf8f6855fc1a934a94e9dd55200db53049f4"
+    },
+    {
+      "path": "source/apps/web/app/modules/project/regen-subject.server.ts",
+      "bytes": 6442,
+      "sha256": "22b1b2a3e7fd4dda8fd59540861ee7a25ae9b006b6e1097f50f34d1ce46b5aa3"
+    },
+    {
+      "path": "source/apps/web/app/modules/project/regen-subject.spec.ts",
+      "bytes": 9422,
+      "sha256": "4a40c1f86645947aa8fd0d5b55c0a29dec90ea321c15ade50a65b92b1dad4563"
+    },
+    {
+      "path": "source/apps/web/app/routes/api.projects.subjects.add.ts",
+      "bytes": 775,
+      "sha256": "4e95168746d4c17acf0937fc13b17ad9fa17d93a3b8ad472f1ae67bbe9bf202e"
+    },
+    {
+      "path": "source/apps/web/app/routes/api.projects.subjects.regenerate.ts",
+      "bytes": 763,
+      "sha256": "08bf45768e7b32f99ba778c306c3f9ef6d6ab6aaa427d91fd3f3093326935cf7"
+    },
+    {
+      "path": "source/apps/web/local-preview/README.md",
+      "bytes": 2989,
+      "sha256": "b188da313b9ca50fa0448c23fd184b6fd7e7f47bedb18fb3872c3ea3aa893b0f"
+    },
+    {
+      "path": "source/apps/web/local-preview/api.ts",
+      "bytes": 3343,
+      "sha256": "16103b0fce8e99626169c58381b981633b3b433c744cc0874533b2859615225a"
+    },
+    {
+      "path": "source/apps/web/local-preview/editor-layout-choices.css",
+      "bytes": 6964,
+      "sha256": "2c9f6be2a5f634e8d494beaacc6bf4a9297bc3a6001bc72e7869074fa45d66f4"
+    },
+    {
+      "path": "source/apps/web/local-preview/editor-layout-choices.tsx",
+      "bytes": 2107,
+      "sha256": "ad46973a69dd71ddf3c398a8c82bbfdbe92b2564b8a384b4749917850c0338ad"
+    },
+    {
+      "path": "source/apps/web/local-preview/fixture.json",
+      "bytes": 279123,
+      "sha256": "e1a20b25c60cb85ac65f744b3df1be3985a8a52fbff87e2a8f922e0436fbf0a9"
+    },
+    {
+      "path": "source/apps/web/local-preview/index.html",
+      "bytes": 267,
+      "sha256": "51adc5439fd56b207fab5c7cce56b80a02f1e4d24e746f2505e38c78eac96f83"
+    },
+    {
+      "path": "source/apps/web/local-preview/main.tsx",
+      "bytes": 2508,
+      "sha256": "b7f4e99479d12271336f29f963e47ce3550bf2f5c407b5a970d8d1a109f21440"
+    },
+    {
+      "path": "source/apps/web/local-preview/style.css",
+      "bytes": 368,
+      "sha256": "abfb14b6eccc35b14a3cef5094e67ece3af79b80cfa0476fa35a61c68c140fdb"
+    },
+    {
+      "path": "source/apps/web/local-preview/tsconfig.json",
+      "bytes": 182,
+      "sha256": "31d108ed2b3bca457a1dbb9989c61bc45615c15807b671bc873316d03f79a6ae"
+    },
+    {
+      "path": "source/apps/web/local-preview/vite.config.ts",
+      "bytes": 620,
+      "sha256": "9d402710dcb79e5653e0e6e91399149fc209147778209ab767c17a623a76cf1e"
+    },
+    {
+      "path": "source/apps/web/local-preview/voice-studies.css",
+      "bytes": 10602,
+      "sha256": "5f9479fefad5067ceff2dfbdcc43dacc122b9ee802efa02764326754ffe4cc22"
+    },
+    {
+      "path": "source/apps/web/local-preview/workbench-studies.css",
+      "bytes": 22111,
+      "sha256": "434a4b93a6f09e337c0d0eeeb10144b4b598e3ced9d6967bde7348ad54312974"
+    },
+    {
+      "path": "source/apps/web/local-preview/workbench-studies.tsx",
+      "bytes": 1098,
+      "sha256": "103f3e527369b1f5a503199231fa38c0fd42fdb99a62696af12ee5422369f547"
+    },
+    {
+      "path": "source/apps/web-worker/src/workers/subject-regen/processors/regen-subject-image.spec.ts",
+      "bytes": 8560,
+      "sha256": "60ec768256facda38900f45574ba404d02f0406733017a46573bdabf3f9dcba7"
+    },
+    {
+      "path": "source/apps/web-worker/src/workers/subject-regen/processors/regen-subject-image.ts",
+      "bytes": 6520,
+      "sha256": "d4661655a34f82ea5a3046749261fb7e6db74da3b6d51d514eb908eb79515ef2"
+    },
+    {
+      "path": "source/packages/bullmq/src/config/subject-regen-config.ts",
+      "bytes": 1180,
+      "sha256": "b59875e9a37a81a986f609cdc85ae8cd376b3992dbd8e16b56fa5bc956a21d88"
+    },
+    {
+      "path": "source/packages/reel-worker-api/src/services/reflix-service.spec.ts",
+      "bytes": 15607,
+      "sha256": "51f0c2822fcc5ed140a02d6559eecc33f4b8de05fb78958894b2aaea1577227a"
+    },
+    {
+      "path": "source/packages/reel-worker-api/src/services/reflix-service.ts",
+      "bytes": 5098,
+      "sha256": "e69b16c4ea50ad37f5c1e4e8c71558693683c53d76ba23d9f5ba884b3922b455"
+    }
+  ]
+}
