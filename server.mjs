@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), 'preview');
 const port = Number(process.env.REELA_PREVIEW_PORT || 8920);
-const path = '/projects/p_demo_subjects?tab=subjects&study=results&voiceLayout=focus';
+const path = '/projects/p_2100467012999344128?tab=subjects&study=results&voiceLayout=focus';
 const mime = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.wav': 'audio/wav' };
 http.createServer(async (req, res) => {
   if (!['GET', 'HEAD'].includes(req.method)) {

@@ -4,7 +4,7 @@
     "voice": "focus",
     "maxColumns": 5
   },
-  "data": "Synthetic interactive fixture, plus user-authorized real screenshots and original image-reference list.",
+  "data": "User-authorized real local display fixture: 132 subjects, 108 groups and 24 voice previews.",
   "sourceFiles": [
     "apps/web-worker/src/workers/subject-regen/processors/regen-subject-image.spec.ts",
     "apps/web-worker/src/workers/subject-regen/processors/regen-subject-image.ts",
@@ -60,23 +60,23 @@
     },
     {
       "path": "README.md",
-      "bytes": 2455,
-      "sha256": "634de850f19953f03cbedf395f717a31d3b520369e44366675db39615666f875"
+      "bytes": 2599,
+      "sha256": "2841be3d0c695b5cc7859b9342ef53346e64a9a3ea3ed88164062f0188a0d4bb"
     },
     {
-      "path": "data/demo-fixture.json",
-      "bytes": 279123,
-      "sha256": "e1a20b25c60cb85ac65f744b3df1be3985a8a52fbff87e2a8f922e0436fbf0a9"
+      "path": "data/real-fixture.json",
+      "bytes": 864285,
+      "sha256": "d662bf0e3c75a881f521bdadf1ba7c6360c8a413f843a25ee8e7e21382cfffb4"
     },
     {
       "path": "docs/INTEGRATION.md",
-      "bytes": 2332,
-      "sha256": "783503c6bc7415fcbf029747704ba61c6ff47acd2c1dd62c399ade40c2b1dec2"
+      "bytes": 2320,
+      "sha256": "6fa149aa7753a55e3192648c8b97c438ea596ee7a10c0a99e07b1f0b67838731"
     },
     {
       "path": "docs/LOCAL-REFERENCES.md",
-      "bytes": 28362,
-      "sha256": "8838b44cd334681e5d0d9efb0d25b0c58ba9aea668bde6415a3f4f41c260468b"
+      "bytes": 28374,
+      "sha256": "bc96a3e3c822ae3cb4ffac5c465b692fe2687eb584afc1d2df396d208835f3fd"
     },
     {
       "path": "docs/screenshots/image.jpg",
@@ -124,14 +124,14 @@
       "sha256": "67eecd54ff6c6527ad071993acea143316464dc1cd519949555141012a91bf92"
     },
     {
-      "path": "preview/assets/index-911sxOeA.js",
-      "bytes": 1250214,
-      "sha256": "97b6d917d7d4c436ca25b6ba710304a7d83720f5241184c7e2c8760cd0c97315"
-    },
-    {
       "path": "preview/assets/index-DXKKxbGT.css",
       "bytes": 267447,
       "sha256": "578ec05fa4d8ac8e38422f5cef6393a344c1fdb83e7ef95ef0aeb1be085a52d1"
+    },
+    {
+      "path": "preview/assets/index-hAECqhv-.js",
+      "bytes": 1855188,
+      "sha256": "63dfc3d8164f53104da5ab68504238aca0b55ba312494483fbee436a1b5d9497"
     },
     {
       "path": "preview/demo-assets/preview-tone.wav",
@@ -201,7 +201,7 @@
     {
       "path": "preview/index.html",
       "bytes": 370,
-      "sha256": "92d22d07d8619ee290b42b480dbcdf343faefa876e472be7e7b21adcbf134410"
+      "sha256": "4e9282d36a5fc2f5d5eaa0665c7dfbf13770718687f04ae78be52fa820a0d102"
     },
     {
       "path": "preview/references/images.json",
@@ -210,18 +210,18 @@
     },
     {
       "path": "preview/references/index.html",
-      "bytes": 69723,
-      "sha256": "2fc783b949975a93748b03c6a1a4f0fa888a15c4c81077b48e0e2fabd18e1c8e"
+      "bytes": 69732,
+      "sha256": "92dd8f6d401097d33860f085868f3f3686101276ca931b7c16c9af4e579bcd81"
     },
     {
       "path": "scripts/check-public.mjs",
-      "bytes": 2210,
-      "sha256": "7dfefa6444c0cd12be30ed819e42a925cee8ca780cd36af75510703cfa82cc68"
+      "bytes": 3356,
+      "sha256": "ad8ff1db38a083cc5ad72fe38fd4fcd063653fdc5bb1423a4fed232bc2851c28"
     },
     {
       "path": "server.mjs",
-      "bytes": 1652,
-      "sha256": "c97d4e563f4edbb45826661350d32dc03d4e5a5fa95fbaa9c14a2ed9f6753977"
+      "bytes": 1658,
+      "sha256": "555bc560c28d1ed7fc9488a26ee303a25922cc7059e9871e2d59351ce3f57797"
     },
     {
       "path": "source/apps/web/app/components/project/project-forms.spec.tsx",
@@ -415,13 +415,13 @@
     },
     {
       "path": "source/apps/web/local-preview/README.md",
-      "bytes": 2989,
-      "sha256": "b188da313b9ca50fa0448c23fd184b6fd7e7f47bedb18fb3872c3ea3aa893b0f"
+      "bytes": 2995,
+      "sha256": "369f598527598b2e4274fd7c0958a61329499f8b8f3449a6142a4a260e533218"
     },
     {
       "path": "source/apps/web/local-preview/api.ts",
-      "bytes": 3343,
-      "sha256": "16103b0fce8e99626169c58381b981633b3b433c744cc0874533b2859615225a"
+      "bytes": 3348,
+      "sha256": "fd3e8343ffe6c891f81544bc87a99957a70ef1b031822fb9df1659c8cef61efb"
     },
     {
       "path": "source/apps/web/local-preview/editor-layout-choices.css",
@@ -435,8 +435,8 @@
     },
     {
       "path": "source/apps/web/local-preview/fixture.json",
-      "bytes": 279123,
-      "sha256": "e1a20b25c60cb85ac65f744b3df1be3985a8a52fbff87e2a8f922e0436fbf0a9"
+      "bytes": 864285,
+      "sha256": "d662bf0e3c75a881f521bdadf1ba7c6360c8a413f843a25ee8e7e21382cfffb4"
     },
     {
       "path": "source/apps/web/local-preview/index.html",
@@ -511,5 +511,15 @@
     "subjectCount": 132,
     "imageVersionCount": 133,
     "uniqueImageUrlCount": 266
+  },
+  "realDemo": {
+    "fixture": "data/real-fixture.json",
+    "projectId": "p_2100467012999344128",
+    "storageKey": "reela-public-real-preview-v2",
+    "subjects": 132,
+    "groups": 108,
+    "voices": 24,
+    "excluded": "Unrelated source/script settings, credentials and environment files.",
+    "runtimeBundle": "preview/assets/index-hAECqhv-.js"
   }
 }

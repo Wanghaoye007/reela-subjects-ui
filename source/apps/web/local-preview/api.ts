@@ -1,5 +1,5 @@
 import fixture from './fixture.json';
-const storageKey = 'reela-source-preview-v1';
+const storageKey = 'reela-public-real-preview-v2';
 export function installLocalApi() {
   const originalFetch = window.fetch.bind(window);
   let subjects = structuredClone(fixture.subjects);

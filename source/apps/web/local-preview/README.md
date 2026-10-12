@@ -11,7 +11,7 @@
 pnpm --filter web exec vite --config local-preview/vite.config.ts
 ```
 
-打开 http://127.0.0.1:8918/projects/p_demo_subjects?tab=subjects&study=results&voiceLayout=focus 。
+打开 http://127.0.0.1:8918/projects/p_2100467012999344128?tab=subjects&study=results&voiceLayout=focus 。
 
 需要忽略提交的`local-preview/fixture.json`（132个主体、24个声音快照）。独立交接包带快照及编译结果，直接运行附带server即可，无需原仓库依赖。
 

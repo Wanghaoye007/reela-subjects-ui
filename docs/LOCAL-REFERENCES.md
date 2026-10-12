@@ -11,7 +11,7 @@
 ## 浏览原图
 
 运行`npm start`后打开 http://127.0.0.1:8920/references/index.html ，可搜索主体、查看预览和各图片版本。
-[图片引用JSON清单](../preview/references/images.json)记录全部对应关系。原图使用本地页面原有CDN地址，需要联网访问；未下载原图文件。运行的交互原型仍使用合成演示数据。
+[图片引用JSON清单](../preview/references/images.json)记录全部对应关系。原图使用本地页面原有CDN地址，需要联网访问；未下载原图文件。运行的交互原型已默认使用本地真实展示数据。
 
 ## 主体与图片版本
 
