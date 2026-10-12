@@ -22,4 +22,4 @@ B/focus样式及context在source/apps/web/local-preview/workbench-studies.tsx、
 
 在原monorepo独立开发分支逐文件比较source/，接入UI和CSS/context；联调鉴权、项目数据、上传/创建/导入、生图、配音及队列/provider。私有工作区中运行已有Web表单/server、worker处理器、SDK相关测试，再检查真实流程。不以独立演示通过替代生产联调。
 
-公开目录只含本次相关代码与合成演示数据，不包含数据库/凭据/内部SDK文档。原工作区必要依赖通过@repo/*及~/别名引用；此公开仓库不声称提供整个monorepo构建链路。
+公开目录包含本次相关代码、合成演示数据，以及用户授权补充的真实界面截图与图片CDN引用清单；不包含数据库/凭据/内部SDK文档。原工作区必要依赖通过@repo/*及~/别名引用；此公开仓库不声称提供整个monorepo构建链路。

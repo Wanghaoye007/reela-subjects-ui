@@ -2,6 +2,13 @@
 
 主体素材页的前端交接仓库：B「结果并列」图片布局、02「描述优先」配音布局，宽屏每行最多5张卡片。
 
+## 本地真实效果与原图
+
+[真实界面截图与原图链接清单](docs/LOCAL-REFERENCES.md)已补充，包含132个主体的预览和图片版本。启动后打开 http://127.0.0.1:8920/references/index.html 浏览真实图片；[JSON清单](preview/references/images.json)可供技术取用。
+
+![本地主体卡片](docs/screenshots/real/subjects.jpg)
+![本地配音设计](docs/screenshots/real/voice.jpg)
+
 ## 直接运行
 
 Node.js 18+，不需要安装依赖：
@@ -30,7 +37,7 @@ npm start
 
 悬停角色卡片观察叠层散开 → 点击角色001图片 → 切换形象/图片版本 → 多次“用作参考” → 添加/移除本地参考图 → 配音切换声音库/设计/克隆 → 查看右上角添加主体。
 
-版本应用和声音绑定只写浏览器localStorage；真实生成、创建/导入、成品上传、设计/克隆声音尚未接入，会提示未接入。公开演示不含真实项目、素材URL、环境配置或原仓库Git历史。
+版本应用和声音绑定只写浏览器localStorage；真实生成、创建/导入、成品上传、设计/克隆声音尚未接入，会提示未接入。交互原型使用合成数据；真实素材URL和截图单独整理在上述参考入口。仓库不含环境凭证或原仓库Git历史。
 
 ![主体卡片](docs/screenshots/subjects.jpg)
 ![配音设计](docs/screenshots/voice.jpg)
